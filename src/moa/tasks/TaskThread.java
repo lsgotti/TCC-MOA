@@ -79,6 +79,7 @@ public class TaskThread extends Thread {
                     : Status.COMPLETED;
         } catch (Throwable ex) {
             this.currentStatus = Status.FAILED;
+            ex.printStackTrace();
             this.finalResult = new FailedTaskReport(ex);
         }
         this.taskEndTime = TimingUtils.getNanoCPUTimeOfThread(getId());
