@@ -111,9 +111,11 @@ public class OO_ORB_Oza extends OzaBag {
 
 		// classValue = 0 não é Bug
 		if (inst.classValue() == 0) {
+			//erro OOB aqui
 			trainModel(inst);
 			if (!poolInitialDefectiveInstances.isEmpty()) {
 				// trainModel(poolResamplingDefectiveInstances.get(0));
+				//erro OOB aqui
 				trainModel(poolInitialDefectiveInstances.get(0));
 				poolInitialDefectiveInstances.remove(0);
 			}
@@ -121,6 +123,34 @@ public class OO_ORB_Oza extends OzaBag {
 
 	}
 
+//	public Instance smote(Instance inst1, Instance inst2) {
+//		//cria nova instancia que vai ser retornada
+//		Instance newInstance = (Instance) inst1.copy();
+//		for (int j = 0; j <= 12; j++) {
+//			// varre os valores das instancias
+//			//calcula a media dos valores entre as instancias
+//			newInstance.setValue(j, (newInstance.value(j) + (inst2.value(j))/2));
+//		}
+//		return newInstance;
+//	}
+//	
+//	public Instance multipleSmote(Instance inst1, DistanceInstance[] instances) {
+//		//cria nova instancia que vai ser retornada
+//		Instance newInstance = (Instance) inst1.copy();
+//		double value;
+//		for (int j = 0; j <= 12; j++) {
+//			// varre os valores das instancias
+//			//calcula a media dos valores entre as instancias
+//			value = 0;
+//			for (int i = 0; i < instances.length ; i++) {
+//				value = value + instances[i].getInstancia().value(j);
+//			}
+//			value = value + inst1.value(j);
+//			newInstance.setValue(j, (value/instances.length+1));
+//		}
+//		return newInstance;
+//	}
+	
 	public DistanceInstance[] knn(int k, Instance inst) {
 
 		double distRes = 0;
@@ -265,7 +295,7 @@ public class OO_ORB_Oza extends OzaBag {
 
 	@Override
 	public double[] getVotesForInstance(Instance inst) {
-
+		//erro index OOB aqui
 		double[] combinedVote = super.getVotesForInstance(inst);
 
 		if (combinedVote.length == 2) {
