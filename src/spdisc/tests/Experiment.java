@@ -42,6 +42,8 @@ public class Experiment {
 		
 		//String task = "EvaluatePrequentialWFL -l (spdisc.meta.WFL_OO_ORB_Oza -i 15 -s 20 -t 0.99 -w 90 -o teste )  -s  (ArffFileStream -f (datasets/"+dataset+".arff) -c 15) -e (FadingFactorEachClassPerformanceEvaluator -a 0.99) -f 1 -d results/"+dataset+"(i15s20t0.99)-1.csv";
 
+		//String task = "EvaluatePrequentialWFL -l (spdisc.meta.WFL_OO_ORB_Oza -i 15 -t 0.99 -p "+paramsORB+")  -s  (ArffFileStream -f (datasets/zulip.arff) -c 15) -e (FadingFactorEachClassPerformanceEvaluator -a 0.99) -f 1 -d results/"+datasetsArray[dsIdx]+"("+paramsORB.replaceAll(";", "-")+")-"+arrId+".csv";
+		
 		try {
 
 			System.out.println(task);
